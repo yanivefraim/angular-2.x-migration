@@ -1,27 +1,18 @@
-<<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html ng-app="phonecatApp">
+<!-- http://mzgol.github.io/slides/ng-1-meets-ng-2/ -->
 <head>
-	<title></title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js"></script>
+
+  <script src="src/script.js"></script>
+  <script src="src/phonecatComponent.js"></script>
+  <script src="src/phonecatSearch.js"></script>
+  <script src="src/phonecatList.js"></script>
 </head>
-<body>
-	<!-- Initialize a new AngularJS app and associate it with a module named "instantSearch"-->
-	<div ng-app="instantSearch" ng-controller="InstantSearchController">
 
-		<div class="bar">
-			<!-- Create a binding between the searchString model and the text field -->
-			<input type="text" ng-model="searchString" placeholder="Enter your search terms" />
-		</div>
-
-		<ul>
-			<!-- Render a li element for every entry in the items array. Notice
-				 the custom search filter "searchFor". It takes the value of the
-				 searchString model as an argument.
-			 -->
-			<li ng-repeat="i in items | searchFor:searchString">
-				<a href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
-				<p>{{i.title}}</p>
-			</li>
-		</ul>
-	</div>
+<body ng-controller="PhoneListCtrl as phoneCtrl">
+  <phonecat-component phones=phoneCtrl.phones></phonecat-component>
 </body>
+
 </html>
