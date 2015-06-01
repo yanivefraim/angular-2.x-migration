@@ -9,30 +9,18 @@ function phonecatComponent() {
     bindToController: {
       phones: "="
     },
-    link: function() {
-      
-    },
-    controller: function($scope) {
-      var that = this;
-      that.filterData = {
+    link: function(scope, elm, attrs, ctrl) {
+      ctrl.filterData = {
         text: '',
         orderBy: 'name'
       }; //default search filter
-      that.search = function(searchData) {
-        that.filterData = searchData;
-        $scope.$apply();
+      ctrl.search = function(searchData) {
+        ctrl.filterData = searchData;
+        scope.$apply();
       }
     },
+    controller: function() {},
     controllerAs: 'vm',
     templateUrl: 'partials/phonecatComponent.tpl.html'
   };
-  class PhonecatComponent {
-    constructor() {
-      
-    }
-    search(searchData) {
-      this.filterData = searchData;
-      $scope.$apply();
-    }
-  }
 }
