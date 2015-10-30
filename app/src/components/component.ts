@@ -4,7 +4,7 @@ import {Component, View} from 'angular2/angular2';
   selector: 'comp'
 })
 @View({
-  template: `<div>123</div>`
+  template: `<div>I am an Angular 2 Component</div>`
 })
 export class Comp {
   constructor () {

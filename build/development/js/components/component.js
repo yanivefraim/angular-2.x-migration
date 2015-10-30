@@ -16,7 +16,7 @@ var Comp = (function () {
             selector: 'comp'
         }),
         angular2_1.View({
-            template: "<div>123</div>"
+            template: "<div>I am an Angular 2 Component</div>"
         })
     ], Comp);
     return Comp;
