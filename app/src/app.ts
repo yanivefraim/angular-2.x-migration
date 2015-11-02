@@ -1,15 +1,13 @@
 /// <reference path="../../tools/typings/tsd.d.ts" />
 import * as angular from 'angular';
-import 'angular-ui-router';
-import {routes} from './layout/routes';
-import './about/index';
 import 'zone.js';
 import 'reflect-metadata';
-import {Comp} from './components/component';
+import {NamesComponent} from './components/names-component';
+import {applicationModule} from './components/application-component/application-component-module';
 import {adapter} from './adapter';
 
-var app = angular.module('app', ['ui.router', 'about']);
-app.config(routes);
+var app = angular.module('app', [applicationModule.name]);
+
 // need to add custom exception handler in order for sourcemaps back to typescript to work
 app.config(['$provide', function($provide: ng.IModule) {
     $provide.decorator('$exceptionHandler', ['$delegate', function ($delegate: any) {
@@ -23,7 +21,7 @@ app.config(['$provide', function($provide: ng.IModule) {
 }]);
 
 app
-  .directive('comp', adapter.downgradeNg2Component(Comp));
+  .directive('ng2NamesComponent', adapter.downgradeNg2Component(NamesComponent));
 
 adapter.bootstrap(document.body, ['app']);
 

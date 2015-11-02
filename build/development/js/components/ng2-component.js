@@ -13,14 +13,15 @@ var Comp = (function () {
     }
     Comp = __decorate([
         angular2_1.Component({
-            selector: 'comp'
+            selector: 'ng2-comp',
+            inputs: ['data']
         }),
         angular2_1.View({
-            template: "<div>I am an Angular 2 Component</div>"
+            template: "{{data.firstName}} {{data.lastName}}"
         })
     ], Comp);
     return Comp;
 })();
 exports.Comp = Comp;
 
-//# sourceMappingURL=../maps/components/component.js.map
+//# sourceMappingURL=../maps/components/ng2-component.js.map
