@@ -7,7 +7,7 @@ function applicationComponent() {
         controller: ApplicationComponent,
         controllerAs: 'applicationComponent',
         bindToController: true,
-        template: `<div>Angular 2 Team:
+        template: `<div>Angular 2 Contributors:
         <ul>
             <li ng-repeat="item in applicationComponent.items">
                 <ng2-names-component [data]=item></ng2-names-component>
@@ -19,7 +19,7 @@ function applicationComponent() {
 class ApplicationComponent {
     items: [];
     constructor() {
-      this.items = [{firstName: 'Victor', lastName: 'Savkin'}, {firstName: 'Tobias', lastName: 'Bosch'}];
+        this.items = [{ firstName: 'Victor', lastName: 'Savkin' }, { firstName: 'Tobias', lastName: 'Bosch' }, { firstName: 'Victor', lastName: 'Berchet' }, { firstName: 'Timothy', lastName: 'Blasi' }];
     }
 }
 
