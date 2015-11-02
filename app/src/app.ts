@@ -2,7 +2,7 @@
 import * as angular from 'angular';
 import 'zone.js';
 import 'reflect-metadata';
-import {NamesComponent} from './components/names-component';
+import {NamesComponent} from './components/names-component/names-component';
 import {applicationModule} from './components/application-component/application-component-module';
 import {adapter} from './adapter';
 

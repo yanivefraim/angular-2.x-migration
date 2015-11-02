@@ -7,11 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     }
 };
 var angular2_1 = require('angular2/angular2');
-var Comp = (function () {
-    function Comp() {
+var NamesComponent = (function () {
+    function NamesComponent() {
         //123
     }
-    Comp = __decorate([
+    NamesComponent = __decorate([
         angular2_1.Component({
             selector: 'ng2-comp',
             inputs: ['data']
@@ -19,9 +19,9 @@ var Comp = (function () {
         angular2_1.View({
             template: "{{data.firstName}} {{data.lastName}}"
         })
-    ], Comp);
-    return Comp;
+    ], NamesComponent);
+    return NamesComponent;
 })();
-exports.Comp = Comp;
+exports.NamesComponent = NamesComponent;
 
-//# sourceMappingURL=../maps/components/ng2-component.js.map
+//# sourceMappingURL=../../maps/components/names-component/names-component.js.map

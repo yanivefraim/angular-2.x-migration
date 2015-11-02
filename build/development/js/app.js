@@ -2,7 +2,7 @@
 var angular = require('angular');
 require('zone.js');
 require('reflect-metadata');
-var names_component_1 = require('./components/names-component');
+var names_component_1 = require('./components/names-component/names-component');
 var application_component_module_1 = require('./components/application-component/application-component-module');
 var adapter_1 = require('./adapter');
 var app = angular.module('app', [application_component_module_1.applicationModule.name]);

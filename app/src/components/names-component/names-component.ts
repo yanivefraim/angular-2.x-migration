@@ -8,7 +8,7 @@ import {Component, View} from 'angular2/angular2';
   template: `{{data.firstName}} {{data.lastName}}`
 })
 export class NamesComponent {
-  constructor () {
+  constructor() {
     //123
   }
 }
