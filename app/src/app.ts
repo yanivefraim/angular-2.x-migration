@@ -1,29 +1,20 @@
-/// <reference path="../../tools/typings/tsd.d.ts" />
-import * as angular from 'angular';
-import 'zone.js';
-import 'reflect-metadata';
-import {NamesComponent} from './components/names-component/names-component';
-import {applicationModule} from './components/application-component/application-component-module';
-import {adapter} from './adapter';
+import {UpgradeAdapter} from 'angular2/upgrade';
+import DataService from './services/data-service';
+import applicationComponent from './components/application-component/application-component';
+import NamesComponent from './components/names-component/names-component';
 
-var app = angular.module('app', [applicationModule.name]);
+angular.module('app', []);
 
-// need to add custom exception handler in order for sourcemaps back to typescript to work
-app.config(['$provide', function($provide: ng.IModule) {
-    $provide.decorator('$exceptionHandler', ['$delegate', function ($delegate: any) {
-        return function (exception: Error, cause: string) {
-            setTimeout(function () {
-                throw exception;
-            });
-            $delegate(exception, cause);
-        };
-    }]);
-}]);
+angular.module('app').directive('applicationComponent', applicationComponent);
 
-app
-  .directive('ng2NamesComponent', adapter.downgradeNg2Component(NamesComponent));
+angular.module('app').service('dataService', DataService);
+
+//=================== ngUpgrade + bootstrap =============================
+let adapter = new UpgradeAdapter();
+
+angular.module('app').directive('ng2NamesComponent', adapter.downgradeNg2Component(NamesComponent));
+
+adapter.upgradeNg1Provider('dataService', { asToken: DataService });
+
 
 adapter.bootstrap(document.body, ['app']);
-
-
-export {app};

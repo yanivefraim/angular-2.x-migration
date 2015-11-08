@@ -81,14 +81,12 @@
   "jspm": {
     "configFile": "app/jspm-config/config.js",
     "dependencies": {
-      "angular": "npm:angular@^1.4.5",
       "angular-cookies": "github:angular/bower-angular-cookies@^1.4.5",
       "angular-local-storage": "npm:angular-local-storage@^0.2.2",
       "angular-mocks": "github:angular/bower-angular-mocks@^1.4.5",
       "angular-sanitize": "github:angular/bower-angular-sanitize@^1.4.6",
       "angular-translate": "github:angular-translate/bower-angular-translate@^2.8.0",
       "angular-ui-router": "npm:angular-ui-router@^0.2.15",
-      "angular2": "npm:angular2@^2.0.0-alpha.45",
       "babel": "npm:babel@^5.8.23",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
       "rx": "npm:rx@^3.1.2",

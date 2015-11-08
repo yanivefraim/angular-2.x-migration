@@ -1,5 +1,6 @@
-/// <reference path="../../../tools/typings/tsd.d.ts" />
-function applicationComponent() {
+import DataService from '../../services/data-service';
+
+export default function applicationComponent () {
     'use strict';
     return {
         restrict: 'E',
@@ -14,13 +15,14 @@ function applicationComponent() {
             </li>
         </div>`
     };
-}
+};
 
 class ApplicationComponent {
-    items: [];
-    constructor() {
-        this.items = [{ firstName: 'Victor', lastName: 'Savkin' }, { firstName: 'Tobias', lastName: 'Bosch' }, { firstName: 'Victor', lastName: 'Berchet' }, { firstName: 'Timothy', lastName: 'Blasi' }];
+    items: any[] = [];
+    /* @ngInject */
+    constructor(dataService: DataService) {
+        dataService.getItems().then((response: any) => {
+            this.items = response.data.slice(0, 10);
+        });
     }
 }
-
-export {applicationComponent, ApplicationComponent};

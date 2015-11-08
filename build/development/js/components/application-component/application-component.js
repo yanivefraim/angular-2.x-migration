@@ -1,4 +1,3 @@
-/// <reference path="../../../tools/typings/tsd.d.ts" />
 function applicationComponent() {
     'use strict';
     return {
@@ -10,13 +9,18 @@ function applicationComponent() {
         template: "<div>Angular 2 Contributors:\n        <ul>\n            <li ng-repeat=\"item in applicationComponent.items\">\n                <ng2-names-component [data]=item></ng2-names-component>\n            </li>\n        </div>"
     };
 }
-exports.applicationComponent = applicationComponent;
+exports.default = applicationComponent;
+;
 var ApplicationComponent = (function () {
-    function ApplicationComponent() {
-        this.items = [{ firstName: 'Victor', lastName: 'Savkin' }, { firstName: 'Tobias', lastName: 'Bosch' }, { firstName: 'Victor', lastName: 'Berchet' }, { firstName: 'Timothy', lastName: 'Blasi' }];
+    /* @ngInject */
+    function ApplicationComponent(dataService) {
+        var _this = this;
+        this.items = [];
+        dataService.getItems().then(function (response) {
+            _this.items = response.data.slice(0, 10);
+        });
     }
     return ApplicationComponent;
 })();
-exports.ApplicationComponent = ApplicationComponent;
 
 //# sourceMappingURL=../../maps/components/application-component/application-component.js.map
