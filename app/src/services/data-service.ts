@@ -8,7 +8,6 @@ export default class DataService {
   }
 
   getUserNames(login: string) {
-    console.log(login);
     return this.$http.get(`https://api.github.com/users/${login}`);
   }
 }

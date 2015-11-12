@@ -14,12 +14,13 @@ var core_1 = require('angular2/core');
 var data_service_1 = require('../../services/data-service');
 var NamesComponent = (function () {
     function NamesComponent(dataService) {
+        this.userData = {};
         this._dataService = dataService;
     }
     NamesComponent.prototype.onInit = function () {
         var _this = this;
+        console.log(this.data.login);
         this._dataService.getUserNames(this.data.login).then(function (response) {
-            console.log(response.data);
             _this.userData = response.data;
         });
     };
@@ -31,7 +32,7 @@ var NamesComponent = (function () {
             selector: 'app-cmp'
         }),
         angular2_1.View({
-            template: "<div style=\"margin: 20px 0\"><span>{{data.login}}</span> | <span> {{userData.name}}</span> <span><img style=\"height:100px;width:100px;vertical-align:middle;margin: 0 20px;\" src=\"{{userData.avatar_url}}\"><span></div>"
+            template: "<div style=\"margin: 20px 0\"><span (click)=doClick()>{{data.login}}</span> | <span> {{userData.name}}</span> <span><img style=\"height:100px;width:100px;vertical-align:middle;margin: 0 20px;\" src=\"{{userData.avatar_url}}\" /></span></div>"
         }),
         __param(0, core_1.Inject(data_service_1.default))
     ], NamesComponent);

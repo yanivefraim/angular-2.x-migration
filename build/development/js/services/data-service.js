@@ -7,7 +7,6 @@ var DataService = (function () {
         return this.$http.get('https://api.github.com/repos/angular/angular/contributors');
     };
     DataService.prototype.getUserNames = function (login) {
-        console.log(login);
         return this.$http.get("https://api.github.com/users/" + login);
     };
     return DataService;
