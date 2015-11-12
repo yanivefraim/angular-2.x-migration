@@ -1,3 +1,5 @@
+import 'zone.js';
+import 'reflect-metadata';
 import {Component, View, bootstrap, Input} from 'angular2/angular2';
 import {Inject} from 'angular2/core';
 import DataService from '../../services/data-service';

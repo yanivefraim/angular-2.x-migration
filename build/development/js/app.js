@@ -1,3 +1,5 @@
+require('zone.js');
+require('reflect-metadata');
 var upgrade_1 = require('angular2/upgrade');
 var data_service_1 = require('./services/data-service');
 var application_component_1 = require('./components/application-component/application-component');

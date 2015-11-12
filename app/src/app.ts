@@ -1,7 +1,10 @@
+import 'zone.js';
+import 'reflect-metadata';
 import {UpgradeAdapter} from 'angular2/upgrade';
 import DataService from './services/data-service';
 import applicationComponent from './components/application-component/application-component';
 import NamesComponent from './components/names-component/names-component';
+
 
 angular.module('app', []);
 

@@ -9,6 +9,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+require('zone.js');
+require('reflect-metadata');
 var angular2_1 = require('angular2/angular2');
 var core_1 = require('angular2/core');
 var data_service_1 = require('../../services/data-service');
